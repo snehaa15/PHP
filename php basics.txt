@@ -1,0 +1,141 @@
+
+
+### 1. **Basic Syntax**
+
+- **PHP Tags**: PHP code is embedded within `<?php ... ?>` tags.
+- **Echo Statement**: Use `echo` to output text.
+  ```php
+  <?php
+  echo "Hello, World!";
+  ?>
+  ```
+
+### 2. **Variables**
+
+- Variables are declared with a dollar sign (`$`).
+- PHP is dynamically typed, meaning you don’t have to declare a variable's type.
+  ```php
+  $name = "Alice";
+  $age = 25;
+  ```
+
+### 3. **Data Types**
+
+- **String**: Text data.
+- **Integer**: Whole numbers.
+- **Float**: Decimal numbers.
+- **Boolean**: True or false.
+- **Array**: A collection of values.
+- **Object**: Instance of a class.
+- **NULL**: Represents no value.
+
+### 4. **Control Structures**
+
+- **If Statement**:
+  ```php
+  if ($age > 18) {
+      echo "Adult";
+  } else {
+      echo "Minor";
+  }
+  ```
+
+- **Switch Statement**:
+  ```php
+  switch ($day) {
+      case 1:
+          echo "Monday";
+          break;
+      case 2:
+          echo "Tuesday";
+          break;
+      default:
+          echo "Another day";
+  }
+  ```
+
+- **Loops**:
+  - **For Loop**:
+    ```php
+    for ($i = 0; $i < 5; $i++) {
+        echo $i;
+    }
+    ```
+  - **While Loop**:
+    ```php
+    $i = 0;
+    while ($i < 5) {
+        echo $i;
+        $i++;
+    }
+    ```
+
+### 5. **Functions**
+
+- **Defining Functions**:
+  ```php
+  function greet($name) {
+      return "Hello, " . $name;
+  }
+  echo greet("Alice");
+  ```
+
+### 6. **Arrays**
+
+- **Indexed Arrays**:
+  ```php
+  $fruits = array("Apple", "Banana", "Cherry");
+  ```
+
+- **Associative Arrays**:
+  ```php
+  $person = array("name" => "Alice", "age" => 25);
+  echo $person["name"];
+  ```
+
+### 7. **Superglobals**
+
+- **$_GET**: Used to collect data sent in the URL.
+- **$_POST**: Used to collect data sent via form submission.
+- **$_SESSION**: Used to manage user sessions.
+- **$_COOKIE**: Used to manage cookies.
+
+### 8. **File Inclusion**
+
+- **Include and Require**:
+  ```php
+  include 'header.php'; // Optional, will produce a warning if not found
+  require 'config.php'; // Mandatory, will produce a fatal error if not found
+  ```
+
+### 9. **Error Handling**
+
+- **Error Reporting**:
+  ```php
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  ```
+
+### 10. **Basic Form Handling**
+
+- **HTML Form**:
+  ```html
+  <form method="post" action="submit.php">
+      Name: <input type="text" name="name">
+      <input type="submit">
+  </form>
+  ```
+
+- **Handling Form Data**:
+  ```php
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = $_POST['name'];
+      echo "Hello, $name!";
+  }
+  ?>
+  ```
+
+### Conclusion
+
+These basics provide a solid foundation to start coding in PHP. As you get comfortable, you can explore more advanced topics such as object-oriented programming, frameworks, and database interaction.

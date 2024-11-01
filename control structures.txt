@@ -1,0 +1,113 @@
+Control structures in PHP allow you to manage the flow of your code based on certain conditions or to repeat sections of code. Here’s a breakdown of the main types of control structures:
+
+### 1. **Conditional Statements**
+
+#### **If Statement**
+Used to execute code based on a condition.
+
+```php
+$age = 20;
+
+if ($age >= 18) {
+    echo "You are an adult.";
+} elseif ($age < 13) {
+    echo "You are a child.";
+} else {
+    echo "You are a teenager.";
+}
+```
+
+#### **Switch Statement**
+An alternative to multiple `if` statements, useful for handling multiple conditions based on a single variable.
+
+```php
+$day = 3;
+
+switch ($day) {
+    case 1:
+        echo "Monday";
+        break;
+    case 2:
+        echo "Tuesday";
+        break;
+    case 3:
+        echo "Wednesday";
+        break;
+    default:
+        echo "Another day";
+}
+```
+
+### 2. **Looping Structures**
+
+#### **For Loop**
+Used to execute a block of code a specific number of times.
+
+```php
+for ($i = 0; $i < 5; $i++) {
+    echo "Number: $i<br>";
+}
+```
+
+#### **While Loop**
+Repeats a block of code as long as a specified condition is true.
+
+```php
+$i = 0;
+while ($i < 5) {
+    echo "Number: $i<br>";
+    $i++;
+}
+```
+
+#### **Do-While Loop**
+Similar to the `while` loop, but guarantees that the block of code will run at least once.
+
+```php
+$i = 0;
+do {
+    echo "Number: $i<br>";
+    $i++;
+} while ($i < 5);
+```
+
+#### **Foreach Loop**
+Specifically for iterating over arrays. It simplifies accessing array elements.
+
+```php
+$fruits = array("Apple", "Banana", "Cherry");
+
+foreach ($fruits as $fruit) {
+    echo "Fruit: $fruit<br>";
+}
+```
+
+### 3. **Control Flow Modifiers**
+
+#### **Break**
+Terminates the current loop or switch statement.
+
+```php
+for ($i = 0; $i < 10; $i++) {
+    if ($i == 5) {
+        break; // Stops the loop when $i is 5
+    }
+    echo $i . "<br>";
+}
+```
+
+#### **Continue**
+Skips the current iteration of the loop and continues with the next iteration.
+
+```php
+for ($i = 0; $i < 10; $i++) {
+    if ($i % 2 == 0) {
+        continue; // Skips even numbers
+    }
+    echo $i . "<br>";
+}
+```
+
+### Summary
+
+Control structures are essential for managing how your PHP code executes based on conditions and for repeating actions. Mastering these structures will enable you to write more complex and functional PHP applications.

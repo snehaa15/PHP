@@ -1,0 +1,94 @@
+Functions in PHP are reusable blocks of code that perform a specific task. They help organize your code, reduce repetition, and improve readability. Here’s a breakdown of how functions work in PHP, along with examples:
+
+### 1. **Defining a Function**
+
+You define a function using the `function` keyword, followed by the function name and parentheses. Any parameters the function takes are listed inside the parentheses.
+
+```php
+function greet($name) {
+    return "Hello, " . $name;
+}
+```
+
+### 2. **Calling a Function**
+
+To execute a function, simply use its name followed by parentheses. If the function takes parameters, provide the arguments inside the parentheses.
+
+```php
+echo greet("Alice"); // Outputs: Hello, Alice
+```
+
+### 3. **Function Parameters and Arguments**
+
+Functions can accept parameters, which are variables passed to the function. You can also set default values for parameters.
+
+```php
+function multiply($a, $b = 2) {
+    return $a * $b;
+}
+
+echo multiply(5); // Outputs: 10 (uses default value for $b)
+echo multiply(5, 3); // Outputs: 15
+```
+
+### 4. **Return Values**
+
+Functions can return values using the `return` statement. If no return statement is specified, the function returns `NULL`.
+
+```php
+function add($a, $b) {
+    return $a + $b;
+}
+
+$result = add(3, 4);
+echo $result; // Outputs: 7
+```
+
+### 5. **Variable Scope**
+
+Variables defined inside a function are local to that function and cannot be accessed outside of it. However, you can use the `global` keyword to access global variables.
+
+```php
+$x = 5;
+
+function test() {
+    global $x;
+    echo $x; // Outputs: 5
+}
+
+test();
+```
+
+### 6. **Anonymous Functions (Closures)**
+
+PHP supports anonymous functions, which can be assigned to variables or passed as arguments to other functions.
+
+```php
+$sum = function($a, $b) {
+    return $a + $b;
+};
+
+echo $sum(2, 3); // Outputs: 5
+```
+
+### 7. **Callbacks**
+
+You can pass a function as an argument to another function. This is often used for event handling or in functions like `array_map()`.
+
+```php
+function square($n) {
+    return $n * $n;
+}
+
+$numbers = [1, 2, 3, 4];
+$squaredNumbers = array_map('square', $numbers); // Calls square() for each element
+print_r($squaredNumbers); // Outputs: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 )
+```
+
+### 8. **Function Overloading**
+
+PHP does not support function overloading directly (having multiple functions with the same name). Instead, you can achieve similar functionality using default parameters or by checking the types of arguments within the function.
+
+### Summary
+
+Functions in PHP are a powerful way to encapsulate logic and promote code reuse. They allow you to define specific behaviors, making your code cleaner and more organized. As you become more familiar with functions, you can explore more advanced topics such as recursion, higher-order functions, and using built-in PHP functions.
